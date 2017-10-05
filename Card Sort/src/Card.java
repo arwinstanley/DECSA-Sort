@@ -1,17 +1,40 @@
 
+ * @author WinstanleyA
+ * @Date 10/4/17
+ * This class I made last year in one of our labs and I modified it to work for this assignment
+ */
 public class Card implements Comparable<Card> {
 	
 	private String suit;
 	private int rank;
-	
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @param none
+	 * just the plain old default constructor
+	 */
     public Card() {
     	suit = "spades";
     	rank = 1;
     }
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @param cardRank the rank in an int
+	 * @param cardSuit the suit in a String
+	 * Simple constructor for when the user already has the right data types
+	 */
 	public Card(int cardRank, String cardSuit) {
 		rank = cardRank;
 		suit = cardSuit;
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @param cardRank the rank in an int
+	 * @param cardSuit the suit in an int
+	 * constructor for inputing the suit as an int
+	 */
     public Card(int cardRank, int cardSuit) {
     	   String s ="";
     	switch(cardSuit){
@@ -29,11 +52,25 @@ public class Card implements Comparable<Card> {
 	    	suit = s;
 	    	rank = cardRank;
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @param cardRank the rank in a String
+	 * @param cardSuit the suit in a String
+	 * For user inputing the rank as a String
+	 */
     public Card(String cardRank, String cardSuit) {
 	    	suit = cardSuit;
 	    	rank = Integer.valueOf(cardRank);
 	    	
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @param cardRank the rank in a String
+	 * @param cardSuit the suit in an int
+	 * For the people who want to input the data in the opposite type god knows why
+	 */
 	public Card(String cardRank, int cardSuit) {
 	 	   String s ="";
 	    	switch(cardSuit){
@@ -51,12 +88,27 @@ public class Card implements Comparable<Card> {
 		    	suit = s;
 		    	rank = Integer.valueOf(cardRank);
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @return suit is the suit field
+	 */
 	public String suit() {
 		return suit;
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @return rank is the rank field
+	 */
 	public int rank() {
 		return rank;
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @return output is the rank in a String
+	 */
 	public String getRankStr() {
 		String output = "";
 		switch(rank){
@@ -91,6 +143,11 @@ public class Card implements Comparable<Card> {
 		}
 		return output;
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @return s is the suit as an int
+	 */
 	public int getSuitInt() {
 		int s = 0;
 		switch(suit){
@@ -107,10 +164,21 @@ public class Card implements Comparable<Card> {
 	}	
 		return s;
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+     * @param otherCard is the other Card you want to compare
+	 * @return boolean true if the cards match false otherwise
+	 */
 	public boolean matches(Card otherCard) {
 		return otherCard.suit().equals(this.suit())
 			&& otherCard.rank()==(this.rank());
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+	 * @return output a String to replace the default String representation of an object
+	 */
 	@Override 
 	public String toString() {
 		String output = "";
@@ -146,6 +214,12 @@ public class Card implements Comparable<Card> {
 	}	
 		return output + " of " + suit;
 	}
+	/*
+	 * @author WinstanleyA
+     * @Date 10/4/17
+     * @param other is the Card you want to compare to this one
+	 * @return int 1 if this is greater than other 0 if they are equal -1 if this is less than other
+	 */
 	@Override
 	public int compareTo(Card other) {
 		  if (getSuitInt()>other.getSuitInt())
