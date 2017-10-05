@@ -102,7 +102,7 @@ public class Card implements Comparable<Card> {
 				break;
 		case "spades": s = 3;
 				break;
-		default: s =0;
+		default: s =-20;
 				break;
 	}	
 		return s;
@@ -148,10 +148,16 @@ public class Card implements Comparable<Card> {
 	}
 	@Override
 	public int compareTo(Card other) {
-		  if (rank>other.rank())
+		  if (getSuitInt()>other.getSuitInt())
 		         return 1;
-		      if(rank==other.rank())
-		         return 0;
+		      if(getSuitInt()==other.getSuitInt()) {
+				  if (rank>other.rank())
+				         return 1;
+				      if(this.matches(other))
+				         return 0;
+				      return -1;
+		      }
 		      return -1;
-	}
+		}
+
 }
