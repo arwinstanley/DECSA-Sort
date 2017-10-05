@@ -1,3 +1,4 @@
+//
 //Get rid of all literal constants :(
 /*
  * @author WinstanleyA

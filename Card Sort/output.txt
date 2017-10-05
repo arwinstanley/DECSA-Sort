@@ -1,0 +1,80 @@
+Ace of clubs	Ace of diamonds	Ace of hearts	Ace of spades	
+Two of clubs	Two of diamonds	Two of hearts	Two of spades	
+Three of clubs	Three of diamonds	Three of hearts	Three of spades	
+Four of clubs	Four of diamonds	Four of hearts	Four of spades	
+Five of clubs	Five of diamonds	Five of hearts	Five of spades	
+Six of clubs	Six of diamonds	Six of hearts	Six of spades	
+Seven of clubs	Seven of diamonds	Seven of hearts	Seven of spades	
+Eight of clubs	Eight of diamonds	Eight of hearts	Eight of spades	
+Nine of clubs	Nine of diamonds	Nine of hearts	Nine of spades	
+Ten of clubs	Ten of diamonds	Ten of hearts	Ten of spades	
+Jack of clubs	Jack of diamonds	Jack of hearts	Jack of spades	
+Queen of clubs	Queen of diamonds	Queen of hearts	Queen of spades	
+King of clubs	King of diamonds	King of hearts	King of spades	
+
+
+
+King of diamonds	Four of clubs	Seven of clubs	Jack of spades	
+Eight of diamonds	Nine of spades	Ten of clubs	Three of spades	
+Six of spades	Six of diamonds	Six of hearts	Four of diamonds	
+Four of spades	Two of clubs	Eight of spades	Jack of hearts	
+Ace of diamonds	Five of hearts	Three of diamonds	Queen of spades	
+Nine of diamonds	Ace of clubs	Queen of hearts	Ten of diamonds	
+Five of clubs	Four of hearts	Ace of hearts	Five of spades	
+Ten of hearts	Nine of hearts	Eight of clubs	King of spades	
+Three of hearts	King of clubs	Two of spades	Jack of clubs	
+Two of diamonds	Queen of clubs	Ace of spades	Three of clubs	
+Seven of spades	Seven of hearts	Ten of spades	Queen of diamonds	
+King of hearts	Six of clubs	Seven of diamonds	Five of diamonds	
+Nine of clubs	Two of hearts	Eight of hearts	Jack of diamonds	
+
+
+
+
+Ace of clubs	Ace of diamonds	Ace of hearts	Ace of spades	
+Two of clubs	Two of diamonds	Two of hearts	Two of spades	
+Three of clubs	Three of diamonds	Three of hearts	Three of spades	
+Four of clubs	Four of diamonds	Four of hearts	Four of spades	
+Five of clubs	Five of diamonds	Five of hearts	Five of spades	
+Six of clubs	Six of diamonds	Six of hearts	Six of spades	
+Seven of clubs	Seven of diamonds	Seven of hearts	Seven of spades	
+Eight of clubs	Eight of diamonds	Eight of hearts	Eight of spades	
+Nine of clubs	Nine of diamonds	Nine of hearts	Nine of spades	
+Ten of clubs	Ten of diamonds	Ten of hearts	Ten of spades	
+Jack of clubs	Jack of diamonds	Jack of hearts	Jack of spades	
+Queen of clubs	Queen of diamonds	Queen of hearts	Queen of spades	
+King of clubs	King of diamonds	King of hearts	King of spades	
+
+
+
+King of spades	null	null	null	
+Queen of spades	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+
+Jack of spades	null	null	null	
+Ten of spades	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+null	null	null	null	
+
+
+
+Three of hearts
