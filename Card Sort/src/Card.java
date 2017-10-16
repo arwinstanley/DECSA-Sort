@@ -24,7 +24,7 @@ public class Card implements Comparable<Card> {
 	 * @param cardSuit the suit in a String
 	 * Simple constructor for when the user already has the right data types
 	 */
-	public Card(int cardRank, String cardSuit) {
+	public Card(String cardSuit, int cardRank) {
 		rank = cardRank;
 		suit = cardSuit;
 	}
@@ -35,7 +35,7 @@ public class Card implements Comparable<Card> {
 	 * @param cardSuit the suit in an int
 	 * constructor for inputing the suit as an int
 	 */
-    public Card(int cardRank, int cardSuit) {
+    public Card(int cardSuit, int cardRank) {
     	   String s ="";
     	switch(cardSuit){
     		case 0: s = "clubs";
@@ -59,7 +59,7 @@ public class Card implements Comparable<Card> {
 	 * @param cardSuit the suit in a String
 	 * For user inputing the rank as a String
 	 */
-    public Card(String cardRank, String cardSuit) {
+    public Card(String cardSuit, String cardRank) {
 	    	suit = cardSuit;
 	    	rank = Integer.valueOf(cardRank);
 	    	
@@ -69,9 +69,9 @@ public class Card implements Comparable<Card> {
      * @Date 10/4/17
 	 * @param cardRank the rank in a String
 	 * @param cardSuit the suit in an int
-	 * For the people who want to input the data in the opposite type god knows why
+	 * For the people who want to input the data in the opposite type
 	 */
-	public Card(String cardRank, int cardSuit) {
+	public Card(int cardSuit, String cardRank) {
 	 	   String s ="";
 	    	switch(cardSuit){
 	    		case 0: s = "clubs";

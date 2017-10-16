@@ -33,27 +33,9 @@ public class CSMain {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        Deck d1 = new Deck();
+        Deck d1 = new Deck(false);
         PrintWriter out = readerW(args[0]);
-        //It wouldn't look nice so i used an abhorrent number of line spaces
-        out.println(d1);
-        out.println();
-        out.println();
-        d1.shuffle();
-        out.println(d1);
-        out.println();
-        out.println();
-        out.println();
-         d1.mergeSort();
-        out.println(d1);
-        out.println();
-        out.println();
-        Deck[] test = d1.deal(2, 2);
-        out.println(test[0]);
-        out.println(test[1]);
-        out.println();
-        out.println();
-        out.println(d1.pick());
+        System.out.print(d1);
         out.close();
         
 	}

@@ -9,7 +9,8 @@ public class Deck {
    private int numSuits = 4;
    private int numCardsPerSuit = 13;
    private Card [] cards = new Card[numSuits*numCardsPerSuit];
-   private int topCard = (numSuits*numCardsPerSuit)-1 ;
+   private int topCard = (cards.length)-1 ;
+   boolean hand = false;
 
 	/*
 	 * @author WinstanleyA
@@ -30,23 +31,7 @@ public class Deck {
 	 * @param sort is a boolean true if you want a sorted deck false otherwise
 	 */
   public Deck(boolean sort) {
-	  if(sort) {
-		  for (int i = 0; i<numSuits; i++) {
-			  for(int j = 0; j < numCardsPerSuit;j++) {
-				  cards[(j+(i*numCardsPerSuit))] = new Card(j+1,i);
-			  }
-		  }
-	  }
-	  else if (sort == false)
-		  for (int i = 0; i<numSuits; i++) {
-			  for(int j = 0; j < numCardsPerSuit;j++) {
-				  int x = 0;
-					 do {
-							x = (int)(Math.random()*(numSuits*numCardsPerSuit));
-						 } while(cards[x]== null);
-				  cards[x] = new Card(j+1,i);
-			  }
-		  }
+       fill(sort);
 	   }
 	/*
 	 * @author WinstanleyA
@@ -58,7 +43,8 @@ public class Deck {
 	 * I didn't remember to write it but at least I was thinking ahead :/
 	 */
   public Deck(int cph) {
-
+	  cards = new Card[cph];
+	  hand = true;
 	  }
 	/*
 	 * @author WinstanleyA
@@ -93,7 +79,7 @@ public class Deck {
 	 * Shuffles all the Cards in cards
 	 */
   public void shuffle() {
-	    for ( int i = cards.length-1; i > 0; i-- ) {
+	    for ( int i = topCard; i > 0; i-- ) {
             int rand = (int)(Math.random()*(i+1));
             Card temp = cards[i];
             cards[i] = cards[rand];
@@ -154,9 +140,9 @@ public class Deck {
 	 * @return boolean true if the decks match false otherwise
 	 */
   public boolean equals(Deck other) {
-	  if(cards.length != other.getCards().length)
+	  if(topCard != other.getTopCard())
 		  return false;
-	  for (int i = 0; i<cards.length;i++) {
+	  for (int i = 0; i<= topCard;i++) {
 		  if(!(cards[i].matches(other.getCards()[i]))){
 			  return false;
 		  }
@@ -172,7 +158,7 @@ public class Deck {
 	 */
   public Deck[] deal(int hands, int cph) {
 	  Deck[] out = new Deck[hands];
-	  if(hands*cph>cards.length)
+	  if(hands*cph>topCard+1)
 		  return null;
 	  for(int i= 0; i < hands; i++) {
 		  Deck holder = new Deck(cph);
@@ -194,11 +180,11 @@ public class Deck {
 	  int x = 0;
 	  Card out = null;
 	  do {
-		  x = (int)(Math.random()*(cards.length));
+		  x = (int)(Math.random()*(topCard));
 	     out = cards[x];
 	  }while(out == null);
 	  cards[x]= null;
-	  for(int i = x; i<cards.length-1; i++) {
+	  for(int i = x; i<topCard-1; i++) {
 		  cards[i] = cards[i+1];
 		  cards[i+1]= null;
 	  }
@@ -210,9 +196,9 @@ public class Deck {
 	 */
   public void selectSort(){
       
-      for (int i = 0; i < cards.length - 1; i++) {
+      for (int i = 0; i < topCardb ; i++) {
           int index = i;
-          for (int j = i + 1; j < cards.length; j++) {
+          for (int j = i + 1; j < topCard; j++) {
               if (cards[j].compareTo(cards[index]) == -1) 
                   index = j;
           }
@@ -299,6 +285,6 @@ public class Deck {
    * and this one without parameters and public
    */
   public void mergeSort() {
-	  mergeSort(cards, 0, cards.length-1);
+	  mergeSort(cards, 0, topCard);
   }
 }
