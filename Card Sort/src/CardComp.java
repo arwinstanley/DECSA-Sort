@@ -1,13 +1,15 @@
 /*
+ * This class is for comparing things even though I mostly used the compareTo in Card
+ * 
  * @author WinstanleyA
  * @Date 10/4/17
- * This class is for comparing things even though I mostly used the compareTo in Card
  */
 import java.util.Comparator;
 public class CardComp implements Comparator<Card>{
 	/* 
-	 * @author WinstanleyA
-	 * @Date 10/4/17
+	 *  returns an integer representation of the difference between this object and another of the
+	 *  same class
+	 *  
 	 * @param c1 is the first card you want to compare
 	 * @param c2 is the second card you want to compare
 	 * @return 1 for greater than 0 for equal -1 for less than
@@ -20,8 +22,8 @@ public class CardComp implements Comparator<Card>{
       return 1;
    }
 	/* 
-	 * @author WinstanleyA
-	 * @Date 10/4/17
+	 *  returns whether or not this object matches another one of the same class
+	 *  
 	 * @param obj1 is the first card you want to compare
 	 * @param obj2 is the second card you want to compare
 	 * @return true if they are equal false if not

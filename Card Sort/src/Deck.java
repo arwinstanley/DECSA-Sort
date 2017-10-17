@@ -1,9 +1,9 @@
-//
-//Get rid of all literal constants :(
+import java.util.*;
 /*
+ * Class to hold values and perform functions like a real deck of cards
+ * 
  * @author WinstanleyA
  * @Date 10/4/17
- * This class is the real deal, the biggest fish, the main event, the coupe de gras
  */
 public class Deck {
    private int numSuits = 4;
@@ -13,10 +13,9 @@ public class Deck {
    boolean hand = false;
 
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * Default constructor to make a full sorted deck
+	 * 
 	 * @param none
-	 * just the plain old default constructor
 	 */
   public Deck() {
 	  for (int i = 0; i<numSuits; i++) {
@@ -26,34 +25,31 @@ public class Deck {
 	  }
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * creates a deck with either sorted or unsorted contents
 	 * @param sort is a boolean true if you want a sorted deck false otherwise
 	 */
   public Deck(boolean sort) {
        fill(sort);
 	   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * returns a "deck" that represents a hand of cards with limited functionality 
+	 * 
 	 * @param cph is the cards per hand
-	 * ||||||||UPDATE||||||||
-	 * @Date 10/5/17
-	 * This is the way I was going to get around the error I throw when I deal out new hands
-	 * I didn't remember to write it but at least I was thinking ahead :/
 	 */
   public Deck(int cph) {
+	  if (cph <= 0)
+		  return;
 	  cards = new Card[cph];
 	  hand = true;
 	  }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * this method fills an otherwise empty deck either sorted or unsorted based on the parameter
+	 *
 	 * @param sort is a boolean true if you want a sorted deck false otherwise
-	 * this method just fills an otherwise empty deck. not really sure what I was going to
-	 * use this one for
 	 */
   public void fill(boolean sort) {
+	  if (hand)
+		  return;
 	  if(sort) {
 		  for (int i = 0; i<numSuits; i++) {
 			  for(int j = 0; j < numCardsPerSuit;j++) {
@@ -74,11 +70,11 @@ public class Deck {
 	  }
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
 	 * Shuffles all the Cards in cards
 	 */
   public void shuffle() {
+	  if (hand)
+		  return;
 	    for ( int i = topCard; i > 0; i-- ) {
             int rand = (int)(Math.random()*(i+1));
             Card temp = cards[i];
@@ -87,44 +83,50 @@ public class Deck {
         }
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * returns the field numSuits
+	 * 
 	 * @return numSuits is the number of Suits field
 	 */
   public int getNumSuits() {
 	  return numSuits;
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * returns the field numCardsPerSuit
+	 * 
 	 * @return numCardsPerSuit is the number of cards in every suit
 	 */
   public int getNumCardsPerSuit() {
 	  return numCardsPerSuit;
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * returns the field array cards
+	 * 
 	 * @return cards is the main part of the class and holds all the Cards
 	 */
   public Card[] getCards() {
 	  return cards;
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * returns the field topCard
+	 * 
 	 * @return topCard is the index of the top card
 	 */
   public int getTopCard() {
 	  return topCard;
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * returns a string representation on the object
+	 * 
 	 * @return output a String to replace the default String representation of an object
 	 */
   public String toString() {
 	  String out = "";
+	  if (hand) {
+		  for(int i = 0 ; i < topCard; i++ ) {
+			  out += "" + cards[i] + "\n";
+		  }
+		return out;
+	  }
 	  for (int i = 0; i < numCardsPerSuit; i++) {
 		  for(int j =0; j < numSuits; j++) {
 			  out += "" + cards[(j*numCardsPerSuit)+i] + "\t";
@@ -134,8 +136,8 @@ public class Deck {
 	  return out;
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * returns a boolean to show whether or not decks match
+	 * 
      * @param other is the other Deck you want to compare
 	 * @return boolean true if the decks match false otherwise
 	 */
@@ -143,20 +145,22 @@ public class Deck {
 	  if(topCard != other.getTopCard())
 		  return false;
 	  for (int i = 0; i<= topCard;i++) {
-		  if(!(cards[i].matches(other.getCards()[i]))){
+		  if(!(cards[i].equals(other.getCards()[i]))){
 			  return false;
 		  }
 	  }
 	  return true;
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * Deals cards out to hands with the right number of cards in each hand
+	 * 
      * @param hands is the number of hands to deal
      * @param cph is the cards per hand
 	 * @return out an array of decks all containing the same number of Cards
 	 */
   public Deck[] deal(int hands, int cph) {
+	  if (hand)
+		  return null;
 	  Deck[] out = new Deck[hands];
 	  if(hands*cph>topCard+1)
 		  return null;
@@ -172,17 +176,14 @@ public class Deck {
 	  return out;
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * returns a card randomly picked from the deck
+	 * 
 	 * @return out a Card that was randomly chosen and removed from the Deck
 	 */
   public Card pick() {
 	  int x = 0;
 	  Card out = null;
-	  do {
-		  x = (int)(Math.random()*(topCard));
-	     out = cards[x];
-	  }while(out == null);
+	  x = (int)(Math.random()*(topCard));
 	  cards[x]= null;
 	  for(int i = x; i<topCard-1; i++) {
 		  cards[i] = cards[i+1];
@@ -191,12 +192,13 @@ public class Deck {
 	  return out;
   }
 	/*
-	 * @author WinstanleyA
 	 * Sorts the deck based on the selection sort algorithm
 	 */
   public void selectSort(){
+	  if (hand)
+		  return;
       
-      for (int i = 0; i < topCardb ; i++) {
+      for (int i = 0; i < topCard ; i++) {
           int index = i;
           for (int j = i + 1; j < topCard; j++) {
               if (cards[j].compareTo(cards[index]) == -1) 
@@ -208,12 +210,13 @@ public class Deck {
       }
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * merges the two sides of the mergeSort
+	 * 
      * @param arr is the array of Cards
      * @param l is the left index
      * @param m is the middle index
      * @param r is the right index
+     * 
 	 * All the comments inside this code I copied from stack overflow to help give me a
 	 * better idea of what was happening when I threw an error
 	 */
@@ -222,48 +225,49 @@ public class Deck {
       int n1 = m - l + 1;
       int n2 = r - m;
       /* Create temp arrays */
-      Card L[] = new Card [n1];
-      Card R[] = new Card [n2];
+      ArrayList<Card> L = new ArrayList<Card>(n1);
+      ArrayList<Card> R = new ArrayList<Card>(n2);
       /*Copy data to temp arrays*/
       for (int i=0; i<n1; ++i)
-          L[i] = arr[l + i];
+          L.add(i, arr[l + i] );
       for (int j=0; j<n2; ++j)
-          R[j] = arr[m + 1+ j];
+          R.add(j, arr[m + 1+ j]);
       /* Merge the temp arrays */
       // Initial indexes of first and second subarrays
       int i = 0, j = 0;
       // Initial index of merged subarry array
       int k = l;
       while (i < n1 && j < n2){
-          if (L[i].compareTo(R[j]) != 1) {
-              arr[k] = L[i];
+          if (L.get(i).compareTo(R.get(j)) != 1) {
+              arr[k] = L.get(i);
               i++;
           }
           else {
-              arr[k] = R[j];
+              arr[k] = R.get(j);
               j++;
           }
           k++;
       }
       /* Copy remaining elements of L[] if any */
       while (i < n1) {
-          arr[k] = L[i];
+          arr[k] = L.get(i);
           i++;
           k++;
       }
       /* Copy remaining elements of R[] if any */
       while (j < n2){
-          arr[k] = R[j];
+          arr[k] = R.get(j);
           j++;
           k++;
       }
   }
 	/*
-	 * @author WinstanleyA
-     * @Date 10/4/17
+	 * recursively sorts deck using the mergeSort algorithm
+	 * 
      * @param arr is the array of Cards
      * @param l is the left index
      * @param r is the right index
+     * 
 	 * All the comments inside this code I copied from stack overflow to help give me a
 	 * better idea of what was happening when I threw an error
 	 */
@@ -279,12 +283,12 @@ public class Deck {
       }
   }	
   /*
-   * @author WinstanleyA
-   * @Date 10/4/17
    * I want it to look better from the main so I made the other methods private
-   * and this one without parameters and public
+   * and this one without parameters and public, for purely aesthetic reasons
    */
   public void mergeSort() {
+	  if (hand)
+		  return;
 	  mergeSort(cards, 0, topCard);
   }
 }
