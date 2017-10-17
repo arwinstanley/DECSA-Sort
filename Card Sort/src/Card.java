@@ -23,6 +23,8 @@ public class Card implements Comparable<Card> {
 	 * @param cardSuit the suit in a String
 	 */
 	public Card(String cardSuit, int cardRank) {
+		if(cardRank<= 0)
+			return;
 		rank = cardRank;
 		suit = cardSuit;
 	}
@@ -88,7 +90,7 @@ public class Card implements Comparable<Card> {
 	 *  
 	 * @return suit is the suit field
 	 */
-	public String suit() {
+	public String getSuit() {
 		return suit;
 	}
 	/*
@@ -96,7 +98,7 @@ public class Card implements Comparable<Card> {
 	 *  
 	 * @return rank is the rank field
 	 */
-	public int rank() {
+	public int getRank() {
 		return rank;
 	}
 	/*
@@ -164,8 +166,8 @@ public class Card implements Comparable<Card> {
 	 * @return boolean true if the cards match false otherwise
 	 */
 	public boolean equals(Card otherCard) {
-		return otherCard.suit().equals(this.suit())
-			&& otherCard.rank()==(this.rank());
+		return otherCard.getSuit().equals(this.getSuit())
+			&& otherCard.getRank()==(this.getRank());
 	}
 	/*
 	 *  returns the object in its string representation
@@ -219,7 +221,7 @@ public class Card implements Comparable<Card> {
 		  if (getSuitInt()>other.getSuitInt())
 		         return 1;
 		  if(getSuitInt()==other.getSuitInt()) {
-				  if (rank>other.rank())
+				  if (rank>other.getRank())
 				         return 1;
 				      if(this.equals(other))
 				         return 0;

@@ -15,7 +15,7 @@ public class CardComp implements Comparator<Card>{
 	 * @return 1 for greater than 0 for equal -1 for less than
 	 */
    public int  compare(Card c1, Card c2){
-      if (c1.rank()<c2.rank())
+      if (c1.getRank()<c2.getRank())
          return -1;
       if(equals(c1, c2))
          return 0;
@@ -29,7 +29,7 @@ public class CardComp implements Comparator<Card>{
 	 * @return true if they are equal false if not
 	 */
    public boolean equals(Object obj1, Object obj2) {
-	   if (((Card)obj1).rank()==((Card)obj2).rank()&&((Card)obj1).suit().equals(((Card)obj2).suit())) {
+	   if (((Card)obj1).getRank()==((Card)obj2).getRank()&&((Card)obj1).getSuit().equals(((Card)obj2).getSuit())) {
 		   return true;
 	   }
 	   return false;

@@ -37,7 +37,7 @@ public class CSMain {
         PrintWriter out = readerW(args[0]);
         System.out.print(d1);
 
-		File file = new File("output.txt");
+		File file = new File("out.txt");
 
 		try {	
 			out = new PrintWriter(file);	
@@ -48,7 +48,7 @@ public class CSMain {
 		
 		CardComp compy = new CardComp();
 		
-		out.println("=============Comparator test=============");
+		out.println("-------Comparator test-------");
 		out.println(tComp1);
 		out.println("Should be greater than:");
 		out.println(tComp2);
@@ -58,11 +58,33 @@ public class CSMain {
 		out.println("key: 1 = 1st greater than 2nd");
 		out.println("     0 = they equal");
 		out.println("    -1 = 1st less than 2nd");
-		
-		
-		
-		
-             
+		out.println();
+		out.println();	
+		Deck breakThisCode = new Deck(false);
+		out.println("-------Pick Method Test-------");
+		out.println("Initial Deck");
+		out.println(breakThisCode);
+		out.println();
+		out.println("This is the card that was dealt from the Deck:");
+		out.println(breakThisCode.pick());
+		out.println("Now it should be missing from the deck because it was pulled out");
+		out.println("Results:");
+		out.println(breakThisCode);
+		out.println();
+		out.println();
+		out.println("-------Deal Method Test-------");
+		out.println("Initial Deck");
+		out.println(breakThisCode);
+		out.println();
+		out.println("Now We ask it to deal out -2 hands with 3 cards in each");
+		out.println("Results:");
+		try {
+			breakThisCode.deal(-2, 3);
+		} catch (NegativeArraySizeException e) {
+			out.println("NegativeArraySizeException "+ e.getMessage());
+		}
+		out.println();
+		out.println();
 		out.close();
         out.close();
         

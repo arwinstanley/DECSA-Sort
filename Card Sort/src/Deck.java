@@ -161,6 +161,8 @@ public class Deck {
   public Deck[] deal(int hands, int cph) {
 	  if (hand)
 		  return null;
+	  if(hands <= 0 || cph <= 0)
+		  return null;
 	  Deck[] out = new Deck[hands];
 	  if(hands*cph>topCard+1)
 		  return null;
