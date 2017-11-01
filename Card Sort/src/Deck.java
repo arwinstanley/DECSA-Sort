@@ -81,7 +81,7 @@ public class Deck {
 				  int x = 0;
 					 do {
 							x = (int)(Math.random()*(numSuits*numCardsPerSuit));
-						 } while(cards[x]== null);
+						 } while(cards[x]!= null);
 				  cards[x] = new Card(i,j+1);
 			  }
 		  	}
@@ -89,7 +89,7 @@ public class Deck {
 				  int x = 0;
 					 do {
 							x = (int)(Math.random()*(numSuits*numCardsPerSuit));
-						 } while(cards[x]== null);
+						 } while(cards[x]!= null);
 				  cards[x] = new Card(i,j+1);
 			  }
 		  }
