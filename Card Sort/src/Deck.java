@@ -103,7 +103,7 @@ public class Deck {
 		  return;
 	  if (hand)
 		  return;
-		for(int k = 0; k<6; k++;){
+		for(int k = 0; k<6; k++){
 	    for ( int i = topCard; i > 0; i-- ) {
             int rand = (int)(Math.random()*(i+1));
             Card temp = cards[i];
