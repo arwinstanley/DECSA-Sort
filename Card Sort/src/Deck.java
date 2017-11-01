@@ -210,7 +210,7 @@ public class Deck {
 			  out[j].getCards()[i] = cards[topCard];
 			  cards[topCard] = null;
 			  topCard--;
-			  if(topCard<0);
+			  if(topCard<0)
 			  return null;		  
 		  }
 	  }
