@@ -64,7 +64,7 @@ public class Card implements Comparable<Card> {
 	 */
     public Card(String cardSuit, String cardRank) {
 	    	suit = cardSuit;
-	    	rank = Integer.valueOf(cardRank);
+	    	rank = getIntOf(cardRank);
 	    	
 	}
 	/**
@@ -88,7 +88,7 @@ public class Card implements Comparable<Card> {
 						break;
 	    	}	
 		    	suit = s;
-		    	rank = Integer.valueOf(cardRank);
+		    	rank = getIntOf(cardRank);
 	}
 	/**
 	 *  returns the value of the field suit as a String
@@ -234,5 +234,65 @@ public class Card implements Comparable<Card> {
 		      }
 		      return -1;
 		}
-
+ private int getIntOf(String input) {
+	 int out = 0;
+	 String tester = input.toLowerCase();
+	 switch(tester){
+		 case "one": out = 1;
+			break;
+		 case "two": out = 2;
+			break;
+		 case "three": out = 3;
+			break;
+		 case "four": out = 4;
+			break;
+		 case "five": out = 5;
+			break;
+		 case "six": out = 6;
+			break;
+		 case "seven": out = 7;
+			break;
+		 case "eight": out = 8;
+			break;
+		 case "nine": out = 9;
+			break;
+		 case "ten": out = 10;
+			break;
+		 case "jack": out = 11;
+			break;
+		 case "queen": out =12;
+			break;
+		 case "king": out =13;
+			break;
+		 case "1": out = 1;
+			break;
+		 case "2": out = 2;
+			break;
+		 case "3": out = 3;
+			break;
+		 case "4": out = 4;
+			break;
+		 case "5": out = 5;
+			break;
+		 case "6": out = 6;
+			break;
+		 case "7": out = 7;
+			break;
+		 case "8": out = 8;
+			break;
+		 case "9": out = 9;
+			break;
+		 case "10": out = 10;
+			break;
+		 case "11": out =11;
+			break;
+		 case "12": out =12;
+			break;
+		 case "13": out =13;
+			break;
+		 default : out = 0;
+		    break;
+	 }
+	 return out;
+ }
 }
