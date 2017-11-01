@@ -41,6 +41,7 @@ public class Deck {
 	  if (cph <= 0)
 		  return;
 	  cards = new Card[cph];
+	  topCard = cph-1;
 	  hand = true;
 	  }
 	/**
