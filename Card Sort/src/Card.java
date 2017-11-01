@@ -1,4 +1,6 @@
-/* This class I made last year in one of our labs and I modified it to work for this assignment
+/**
+ * 
+ * This class I made last year in one of our labs and I modified it to work for this assignment
  * 
  * @author WinstanleyA
  * @Date 10/4/17
@@ -7,7 +9,8 @@ public class Card implements Comparable<Card> {
 	
 	private String suit;
 	private int rank;
-	/* 
+	/**
+	 * 
 	 * just the plain old default constructor
 	 * 
 	 * @param none
@@ -16,7 +19,7 @@ public class Card implements Comparable<Card> {
     	suit = "spades";
     	rank = 1;
     }
-	/*
+	/**
 	 * Simple constructor for when the user already has the right data types
 	 * 
 	 * @param cardRank the rank in an int
@@ -28,7 +31,8 @@ public class Card implements Comparable<Card> {
 		rank = cardRank;
 		suit = cardSuit;
 	}
-	/*
+	/**
+	 * 
 	 * constructor for inputing the suit as an int
 	 * 
 	 * @param cardRank the rank in an int
@@ -51,7 +55,8 @@ public class Card implements Comparable<Card> {
 	    	suit = s;
 	    	rank = cardRank;
 	}
-	/*
+	/**
+	 * 
 	 * For user inputing the rank as a String
 	 * 
 	 * @param cardRank the rank in a String
@@ -62,7 +67,7 @@ public class Card implements Comparable<Card> {
 	    	rank = Integer.valueOf(cardRank);
 	    	
 	}
-	/*
+	/**
 	 * For the people who want to input the data in the opposite type
 	 * 
 	 * @param cardRank the rank in a String
@@ -85,7 +90,7 @@ public class Card implements Comparable<Card> {
 		    	suit = s;
 		    	rank = Integer.valueOf(cardRank);
 	}
-	/*
+	/**
 	 *  returns the value of the field suit as a String
 	 *  
 	 * @return suit is the suit field
@@ -93,7 +98,7 @@ public class Card implements Comparable<Card> {
 	public String getSuit() {
 		return suit;
 	}
-	/*
+	/**
 	 *  returns the value of the field rank as an int
 	 *  
 	 * @return rank is the rank field
@@ -101,7 +106,7 @@ public class Card implements Comparable<Card> {
 	public int getRank() {
 		return rank;
 	}
-	/*
+	/**
 	 *  returns the value of the field rank as a String
 	 *  
 	 * @return output is the rank in a String
@@ -140,7 +145,7 @@ public class Card implements Comparable<Card> {
 		}
 		return output;
 	}
-	/*
+	/**
 	 *  returns the value of the field suit as an int
 	 *  
 	 * @return s is the suit as an int
@@ -159,7 +164,7 @@ public class Card implements Comparable<Card> {
 	}	
 		return s;
 	}
-	/*
+	/**
 	 *  returns whether or not the cards match
 	 *  
      * @param otherCard is the other Card you want to compare
@@ -169,7 +174,7 @@ public class Card implements Comparable<Card> {
 		return otherCard.getSuit().equals(this.getSuit())
 			&& otherCard.getRank()==(this.getRank());
 	}
-	/*
+	/**
 	 *  returns the object in its string representation
 	 *
 	 * @return output a String to replace the default String representation of an object
@@ -209,7 +214,7 @@ public class Card implements Comparable<Card> {
 	}	
 		return output + " of " + suit;
 	}
-	/*
+	/**
 	 *  returns an integer representation of the difference between this object and another of the
 	 *  same class
 	 * 

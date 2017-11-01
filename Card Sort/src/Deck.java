@@ -319,7 +319,7 @@ public class Deck {
 	    }
 	  }
 	     /**
-	      *  Swaps the place of two cards
+	      *  Swaps the place of two card
 	      *  
 	      *  @param i is the first of the two cards
 	      *  @param j is the second of the two cards

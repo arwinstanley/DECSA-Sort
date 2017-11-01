@@ -1,4 +1,4 @@
-/*
+/**
  * This class is for comparing things even though I mostly used the compareTo in Card
  * 
  * @author WinstanleyA
@@ -6,7 +6,7 @@
  */
 import java.util.Comparator;
 public class CardComp implements Comparator<Card>{
-	/* 
+	/** 
 	 *  returns an integer representation of the difference between this object and another of the
 	 *  same class
 	 *  
@@ -21,7 +21,7 @@ public class CardComp implements Comparator<Card>{
          return 0;
       return 1;
    }
-	/* 
+	/** 
 	 *  returns whether or not this object matches another one of the same class
 	 *  
 	 * @param obj1 is the first card you want to compare
