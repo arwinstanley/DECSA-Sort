@@ -74,7 +74,17 @@ public class Deck {
 		  }
 	  }
 	  else {
+	  	cards[(int)(Math.random()*(numSuits*numCardsPerSuit))] = new Card(0,1);
 		  for (int i = 0; i<numSuits; i++) {
+		  	if(i==0){
+		  		for(int j = 1; j < numCardsPerSuit;j++) {
+				  int x = 0;
+					 do {
+							x = (int)(Math.random()*(numSuits*numCardsPerSuit));
+						 } while(cards[x]== null);
+				  cards[x] = new Card(i,j+1);
+			  }
+		  	}
 			  for(int j = 0; j < numCardsPerSuit;j++) {
 				  int x = 0;
 					 do {
@@ -93,12 +103,14 @@ public class Deck {
 		  return;
 	  if (hand)
 		  return;
+		for(int k = 0; k<6; k++;){
 	    for ( int i = topCard; i > 0; i-- ) {
             int rand = (int)(Math.random()*(i+1));
             Card temp = cards[i];
             cards[i] = cards[rand];
             cards[rand] = temp;
         }
+    }
   }
 	/**
 	 * returns the field numSuits
@@ -319,7 +331,7 @@ public class Deck {
 	    }
 	  }
 	     /**
-	      *  Swaps the place of two card
+	      *  Swaps the place of two cards
 	      *  
 	      *  @param i is the first of the two cards
 	      *  @param j is the second of the two cards
