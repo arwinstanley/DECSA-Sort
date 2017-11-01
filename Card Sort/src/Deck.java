@@ -227,6 +227,7 @@ public class Deck {
 	  int x = 0;
 	  Card out = null;
 	  x = (int)(Math.random()*(topCard));
+	  out = cards[x];
 	  cards[x]= null;
 	  for(int i = x; i<topCard-1; i++) {
 		  cards[i] = cards[i+1];
