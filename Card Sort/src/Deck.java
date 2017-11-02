@@ -1,4 +1,4 @@
-import java.util.*;
+
 /**
  * Class to hold values and perform functions like a real deck of cards
  * 
@@ -266,7 +266,7 @@ public class Deck {
    * 
    */
 
-  public Card[] merge (Deck d1, Deck d2) {
+  private Card[] merge (Deck d1, Deck d2) {
 	    // create the new deck
 	    Card[] result = new Card[d1.cards.length + d2.cards.length];
 			
@@ -304,6 +304,12 @@ public class Deck {
 			  return;
 		  if (hand)
 			  return;
+		  int dif = (cards.length-1)- topCard;
+		  if(dif!=0) {
+			  for(int i = 1; i<=dif; i++) {
+				  cards[topCard+i] = new Card(3, 13);
+			  }
+		  }
 	    int mid = (cards.length-1) / 2;
 			
 	    // divide the deck roughly in half
@@ -318,11 +324,16 @@ public class Deck {
 	    // merge the two halves and return the result
 	    // (d1 and d2 get garbage collected)
 	    cards = merge (d1, d2);
+		  if(dif!=0) {
+	    for (int i = 0; i< dif; i++) {
+	    	cards[cards.length - i] = null;
+	    }
+	    }
 	  }
 	     /**
 	      *  sorts the small amount of cards
 	      */
-	  public void sort () {
+	  private void sort () {
 	    for (int i=0; i<cards.length; i++) {
 	    	 int index = i;
 	         for (i = i+1; i<cards.length; i++)
